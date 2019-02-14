@@ -6,8 +6,6 @@ class Books extends React.Component {
        
         this.state = ({books: {}});
     }
-    
-
 
     render() {
         return(
@@ -25,7 +23,7 @@ class Books extends React.Component {
                     </div>
                 </div>
                 <div className="row book-list">
-                    {this.state.books.map(book => (
+                    {this.props.books.map(book => (
                     <div className="col-xs-6 col-sm-3" key={book.id}>
                         <div className="thumbnail">
                         <img alt="" className="img-responsive" src={book.cover} />

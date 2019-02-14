@@ -12,7 +12,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      books: books,
+      books,
       selectedFilter: "All",
       menu: { open: false }
     };
@@ -59,7 +59,9 @@ class App extends React.Component {
 
         <Header title="ReactJS Academy" />
 
-        <Books tabItems={tabItems} />
+        <Books 
+            tabItems={tabItems} 
+            books={this.state.books} />
 
         <About />
 
