@@ -1,6 +1,7 @@
 import React from "react";
 import books from "../mocks/books";
-import BookList from './Books/BookList'
+import BookList from './Books/BookList';
+import BookFilter from './Books/BookFilter';
 
 class Books extends React.Component {
     constructor(props){
@@ -23,17 +24,17 @@ class Books extends React.Component {
       };
 
     render() {
-        const filters = ["All", "Web", "Mobile", "DevOps", "Essentials"];
+        // const filters = ["All", "Web", "Mobile", "DevOps", "Essentials"];
 
-        const tabItems = filters.map(filter => (
-          <li
-            className={filter === this.state.selectedFilter ? "active" : ""}
-            key={filter}
-            onClick={() => this.selectFilter(filter)}
-          >
-            <a href="#0">{filter}</a>
-          </li>
-        ));
+        // const tabItems = filters.map(filter => (
+        //   <li
+        //     className={filter === this.state.selectedFilter ? "active" : ""}
+        //     key={filter}
+        //     onClick={() => this.selectFilter(filter)}
+        //   >
+        //     <a href="#0">{filter}</a>
+        //   </li>
+        // ));
 
         return(
                 <section id="books">
@@ -46,7 +47,9 @@ class Books extends React.Component {
                     </div>
                     <div className="row">
                         <div className="col-lg-12">
-                        <ul className="nav nav-pills text-center">{tabItems}</ul>
+                        <ul className="nav nav-pills text-center">
+                            <BookFilter selectedFilter={this.state.selectedFilter} selectFilter={this.selectFilter} />
+                            </ul>
                         </div>
                     </div>
                     <BookList books={this.state.books} />
