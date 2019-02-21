@@ -4,6 +4,7 @@ const BookFilter = (props) => {
 
     const filters = ["All", "Web", "Mobile", "DevOps", "Essentials"];
     return (
+      <div>
 
         {filters.map(filter => (
           <li
@@ -14,6 +15,8 @@ const BookFilter = (props) => {
             <a href="#0">{filter}</a>
           </li>
         ))}
+      </div>
+
     )
 }
 
